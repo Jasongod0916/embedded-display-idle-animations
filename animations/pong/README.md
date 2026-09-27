@@ -1,4 +1,4 @@
-# Kira Pong
+# Pong
 
 **Original animation:** authored for this project by the repository owner. It is not an animation authored by the XiaoZhi firmware authors.
 
@@ -19,7 +19,7 @@ This folder is for people who already have firmware and other device features, b
 
 ## Files
 
-- [`kira_pong_source_excerpt.md`](kira_pong_source_excerpt.md): only the Pong constants, game state, AI, physics, collision, and drawing code extracted from the original Kira board implementation. It is an excerpt, not a standalone buildable library.
+- [`pong_source_excerpt.md`](pong_source_excerpt.md): only the Pong constants, game state, AI, physics, collision, and drawing code extracted from the original Kira board implementation. It is an excerpt, not a standalone buildable library.
 - [`AI_PROMPT.md`](AI_PROMPT.md): ready-to-copy instructions for asking an AI to integrate the animation into an existing project.
 - [`XIAOZHI-MIT-LICENSE.txt`](XIAOZHI-MIT-LICENSE.txt): preserves the upstream firmware license notice for source excerpts taken from the integration file.
 

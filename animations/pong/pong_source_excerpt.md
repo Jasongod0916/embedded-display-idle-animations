@@ -1,4 +1,4 @@
-# Kira Pong — animation source excerpts
+# Pong — animation source excerpts
 
 These excerpts contain only the Pong animation data, game logic, and drawing code from the original Kira board source. They are not a standalone build target: the original code runs inside the Kira display class and uses that firmware's framebuffer, drawing, dimensions, and random-number helper.
 

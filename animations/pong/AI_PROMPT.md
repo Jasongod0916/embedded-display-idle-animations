@@ -1,6 +1,6 @@
-# AI porting prompt — Kira Pong
+# AI porting prompt — Pong
 
-Give the AI this whole `kira-pong` folder together with your existing firmware project. Fill in the details below, then send the prompt.
+Give the AI this whole `pong` folder together with your existing firmware project. Fill in the details below, then send the prompt.
 
 ---
 
@@ -18,7 +18,7 @@ Please study the animation-specific source excerpt in this folder and integrate 
 
 ## What to preserve
 
-Use `kira_pong_source_excerpt.md` for the original Pong constants, state, AI, physics, collision, and drawing behavior. Preserve the asymmetric AI personalities, screen-scaled geometry, elapsed-time simulation, and silent no-score presentation. Translate the Kira-specific framebuffer and drawing calls to my target display API.
+Use `pong_source_excerpt.md` for the original Pong constants, state, AI, physics, collision, and drawing behavior. Preserve the asymmetric AI personalities, screen-scaled geometry, elapsed-time simulation, and silent no-score presentation. Translate the Kira-specific framebuffer and drawing calls to my target display API.
 
 First inspect my existing project and identify its display abstraction, idle-state handling, and wake/input flow. Reuse those existing APIs and integrate the animation into the current idle experience. Do not replace or reimplement my weather, clock, menus, networking, audio, or other existing features. Keep the changes limited to what is needed for the animation. If the animation conflicts with an existing screen or behavior, explain the conflict and ask how it should fit before changing that behavior.
 

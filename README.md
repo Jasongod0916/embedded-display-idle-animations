@@ -6,6 +6,6 @@ Animations may target different display technologies and sizes, but are not auto
 
 ## Animation folders
 
-- [`animations/kira-pong/`](animations/kira-pong/) — original silent AI-versus-AI Pong animation, with an animation-only source excerpt and instructions to preserve the user's existing project behavior. Its original target is Kira with a 128 x 128 monochrome SH1107 OLED.
+- [`animations/pong/`](animations/pong/) — original silent AI-versus-AI Pong animation, with an animation-only source excerpt and instructions to preserve the user's existing project behavior. Its original target is Kira with a 128 x 128 monochrome SH1107 OLED.
 
 Compiled firmware and one-click installers are optional future additions. The per-animation source folder is the main deliverable.
