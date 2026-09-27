@@ -9,6 +9,10 @@ This folder is for people who already have firmware and other device features, b
 - Seeed XIAO ESP32-S3 Sense, in the Kira assembly
 - 128 x 128 monochrome SH1107 OLED over I2C
 
+## Preview
+
+![Pong standby animation](preview.gif)
+
 ## Behavior
 
 - Starts after ten seconds of idle with no speech or interaction.
