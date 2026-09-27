@@ -10,4 +10,6 @@ Animations may target different display technologies and sizes, but are not auto
 
 ![Pong standby animation](animations/pong/preview.gif)
 
+The flicker in the GIF is caused by recording the display; the animation looks normal when viewed directly.
+
 Compiled firmware and one-click installers are optional future additions. The per-animation source folder is the main deliverable.

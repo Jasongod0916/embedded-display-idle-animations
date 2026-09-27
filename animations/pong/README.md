@@ -13,6 +13,8 @@ This folder is for people who already have firmware and other device features, b
 
 ![Pong standby animation](preview.gif)
 
+The flicker in the GIF is caused by recording the display; the animation looks normal when viewed directly.
+
 ## Behavior
 
 - Starts after ten seconds of idle with no speech or interaction.
