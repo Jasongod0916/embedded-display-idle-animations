@@ -4,7 +4,7 @@ Give the AI this whole `kira-pong` folder. Fill in the target details, then send
 
 ---
 
-Please study this animation folder and help me port or recreate its standby animation for my device.
+Please study the animation-specific source excerpt in this folder and help me port or recreate its standby animation for my device.
 
 ## My target device
 
@@ -16,8 +16,8 @@ Please study this animation folder and help me port or recreate its standby anim
 
 ## What to preserve
 
-Use `README.md` for the animation behavior and `reference/kira_board.cc` as the original source reference. Preserve the Pong gameplay, asymmetric AI personalities, screen-scaled geometry, elapsed-time simulation, and silent no-score presentation. Translate only the display integration and any hardware-specific timing needed for my target.
+Use `kira_pong_source_excerpt.md` for the original Pong constants, state, AI, physics, collision, and drawing behavior. Preserve the asymmetric AI personalities, screen-scaled geometry, elapsed-time simulation, and silent no-score presentation. Translate the Kira-specific framebuffer and drawing calls to my target display API.
 
-First identify which parts of the reference implement game state, AI, physics/collisions, rendering, and host idle/wake handling. Then propose a small target-specific implementation that fits my existing project. Do not assume an API or hardware feature that I have not listed; ask me for missing details before writing code. Include the exact files to add/change and the build or flashing steps for my device.
+The source is an excerpt from a larger firmware class, not a standalone library. First identify its assumptions and required helpers. Do not assume an API or hardware feature that I have not listed; ask me for missing details before writing code. Then provide the exact files to add/change and the build or flashing steps for my device.
 
-If the original reference depends on XiaoZhi/Kira helpers that do not exist on my target, explain the dependency and provide a target-side replacement. Do not copy unrelated XiaoZhi board, audio, weather, or cloud-assistant code into my project.
+Do not copy unrelated XiaoZhi board, audio, weather, or cloud-assistant code into my project.
