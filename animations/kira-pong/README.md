@@ -2,7 +2,7 @@
 
 **Original animation:** authored for this project by the repository owner. It is not an animation authored by the XiaoZhi firmware authors.
 
-This folder is an AI handoff pack: the animation-specific source excerpt, a short behavior and hardware description, and a copy-ready prompt. Give the whole folder to an AI coding assistant along with your target board, display, language, and build system.
+This folder is for people who already have firmware and other device features, but want to add this standby animation. Give the whole folder and your existing project to an AI coding assistant. Ask it to integrate only the animation into your project and preserve your existing features, such as weather, clock, menus, networking, audio, and wake handling.
 
 ## Original target
 
@@ -20,10 +20,10 @@ This folder is an AI handoff pack: the animation-specific source excerpt, a shor
 ## Files
 
 - [`kira_pong_source_excerpt.md`](kira_pong_source_excerpt.md): only the Pong constants, game state, AI, physics, collision, and drawing code extracted from the original Kira board implementation. It is an excerpt, not a standalone buildable library.
-- [`AI_PROMPT.md`](AI_PROMPT.md): ready-to-copy instructions for asking an AI to port the animation.
+- [`AI_PROMPT.md`](AI_PROMPT.md): ready-to-copy instructions for asking an AI to integrate the animation into an existing project.
 - [`XIAOZHI-MIT-LICENSE.txt`](XIAOZHI-MIT-LICENSE.txt): preserves the upstream firmware license notice for source excerpts taken from the integration file.
 
-The display API and idle/wake trigger are host-device responsibilities. For another board, ask the AI to adapt only the rendering and integration layer while preserving the gameplay behavior.
+The display API and idle/wake trigger belong to the host device. The AI should reuse the host project's existing drawing and state-management APIs, adding the animation without replacing unrelated behavior.
 
 ## License
 
