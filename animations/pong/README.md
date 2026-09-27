@@ -2,7 +2,7 @@
 
 **Original animation:** authored for this project by the repository owner. It is not an animation authored by the XiaoZhi firmware authors.
 
-This folder is for people who already have firmware and other device features, but want to add this standby animation. Give the whole folder and your existing project to an AI coding assistant. Ask it to integrate only the animation into your project and preserve your existing features, such as weather, clock, menus, networking, audio, and wake handling.
+This folder is for people who already have firmware and other device features, but want to add this standby animation. Give this folder to an AI coding agent working in your existing project. The included `AI_PROMPT.md` is ready to use as-is: the agent should inspect the project files to discover the hardware and integration points, then add only the animation while preserving existing features such as weather, clock, menus, networking, audio, and wake handling. No fields need to be filled in.
 
 ## Original target
 
