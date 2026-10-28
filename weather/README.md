@@ -15,9 +15,9 @@ This folder is an AI handoff pack for adding a similar live weather card to an e
 
 The AI should adapt the layout, drawing calls, tool registration, event scheduling, and timeout behavior to the target project. The Kira implementation is a reference, not a standalone library.
 
-## Taiwan location support
+## Location support for other projects
 
-The current Kira source is fixed to Minxiong. The AI prompt extends the feature so users can ask for other Taiwan counties and cities: a spoken location is resolved to coordinates with Open-Meteo's [Geocoding API](https://open-meteo.com/en/docs/geocoding-api), filtered to Taiwan (`countryCode=TW`). If no location is spoken, Minxiong remains the default. Requests for places outside Taiwan are not supported, and ambiguous place names should be clarified instead of guessed.
+The current Kira source is fixed to Minxiong, Taiwan. For another project, the AI agent should first confirm with its owner which country the weather feature should support, then use that country's locations for place lookup. Taiwan is the Kira example, not a restriction on other projects. The prompt uses Open-Meteo's [Geocoding API](https://open-meteo.com/en/docs/geocoding-api) with a country-code filter so a spoken city name is resolved only inside the confirmed country. If no default city can be found in the project, the agent should ask the owner which city to use when no place is spoken.
 
 ## Files
 
