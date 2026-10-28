@@ -2,7 +2,9 @@
 
 These notes and code excerpts describe the original weather feature in `kira-xiao-s3-sense`. They are intentionally not a standalone library: the original code relies on ESP-IDF HTTP/TLS and timer APIs, cJSON, XiaoZhi's MCP server and application scheduler, and Kira's SH1107 drawing helpers. An AI agent must map those responsibilities to the target project instead of copying these APIs blindly.
 
-## Data request
+**Location scope:** the current Kira implementation below is fixed to Minxiong. The location-selection behavior requested for this handoff pack is an extension: resolve spoken Taiwan locations with Open-Meteo Geocoding (`countryCode=TW`), then fetch weather for the returned coordinates. Do not treat the fixed-location code below as already supporting that extension.
+
+## Original fixed-location data request
 
 The Kira firmware requests current temperature, WMO weather code, day/night status, and hourly precipitation probability for Minxiong, Taiwan. The request uses the Asia/Taipei time zone.
 
@@ -15,6 +17,10 @@ https://api.open-meteo.com/v1/forecast
   &forecast_days=1
   &timezone=Asia/Taipei
 ```
+
+## Taiwan location lookup for the extension
+
+When a user names a Taiwan county/city or township, resolve it first with Open-Meteo's [Geocoding API](https://open-meteo.com/en/docs/geocoding-api), using the user's location as the URL-encoded `name`, `language=zh`, `format=json`, and `countryCode=TW`. Confirm `country_code` is `TW` before using the returned latitude and longitude. Keep Minxiong as the default only when the user did not say a location. If multiple Taiwan results are plausible, ask for clarification rather than selecting a location at random.
 
 The implementation uses HTTPS certificate verification, an eight-second request timeout, and a 6144-byte response limit. Successful parsed results are cached for 10 minutes. It validates the HTTP status and required JSON values before creating a weather card.
 
