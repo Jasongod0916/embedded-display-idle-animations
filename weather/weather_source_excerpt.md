@@ -2,7 +2,7 @@
 
 These notes and code excerpts describe the original weather feature in `kira-xiao-s3-sense`. They are intentionally not a standalone library: the original code relies on ESP-IDF HTTP/TLS and timer APIs, cJSON, XiaoZhi's MCP server and application scheduler, and Kira's SH1107 drawing helpers. An AI agent must map those responsibilities to the target project instead of copying these APIs blindly.
 
-**Location scope:** the current Kira implementation below is fixed to Minxiong, Taiwan. The handoff prompt extends the system for other projects: first confirm the project owner's country, then resolve spoken places only within that country using Open-Meteo Geocoding and its country-code filter. Do not treat the fixed-location code below as already supporting dynamic locations.
+**Location scope:** the current Kira implementation below is fixed to Minxiong, Taiwan. The handoff prompt extends the system for other projects: confirm the project owner's country once during setup, save its country code, then let the device user name only a city/county in normal weather requests. Resolve each spoken place within the saved country using Open-Meteo Geocoding and its country-code filter. Do not treat the fixed-location code below as already supporting dynamic locations.
 
 ## Original fixed-location data request
 
@@ -20,7 +20,7 @@ https://api.open-meteo.com/v1/forecast
 
 ## Location lookup for the extension
 
-After confirming the project owner's supported country, resolve a spoken city/county with Open-Meteo's [Geocoding API](https://open-meteo.com/en/docs/geocoding-api), using the place as the URL-encoded `name`, an appropriate `language`, `format=json`, and `countryCode` set to the confirmed ISO country code. Confirm the result's `country_code` matches before using its coordinates. If multiple results in that country are plausible, ask for clarification rather than selecting one at random. For Kira, the country is Taiwan (`TW`) and the no-location default is Minxiong.
+After confirming the project owner's supported country during setup, save its ISO country code for later lookups. During normal use, resolve only the spoken city/county with Open-Meteo's [Geocoding API](https://open-meteo.com/en/docs/geocoding-api), using the place as the URL-encoded `name`, an appropriate `language`, `format=json`, and `countryCode` set to the saved code. The device user should not have to repeat the country. Confirm the result's `country_code` matches before using its coordinates. If multiple results in that country are plausible, ask for clarification rather than selecting one at random. For Kira, the configured country is Taiwan (`TW`) and the original no-location default is Minxiong.
 
 The implementation uses HTTPS certificate verification, an eight-second request timeout, and a 6144-byte response limit. Successful parsed results are cached for 10 minutes. It validates the HTTP status and required JSON values before creating a weather card.
 

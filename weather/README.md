@@ -17,7 +17,7 @@ The AI should adapt the layout, drawing calls, tool registration, event scheduli
 
 ## Location support for other projects
 
-The current Kira source is fixed to Minxiong, Taiwan. For another project, the AI agent should first confirm with its owner which country the weather feature should support, then use that country's locations for place lookup. Taiwan is the Kira example, not a restriction on other projects. The prompt uses Open-Meteo's [Geocoding API](https://open-meteo.com/en/docs/geocoding-api) with a country-code filter so a spoken city name is resolved only inside the confirmed country. If no default city can be found in the project, the agent should ask the owner which city to use when no place is spoken.
+The current Kira source is fixed to Minxiong, Taiwan. For another project, the AI agent first confirms the country with its owner and saves it as the lookup scope. After setup, the device user can ask for a city or county by name alone; the saved country keeps place lookup in the right country, so the user does not have to repeat the country every time. Taiwan is the Kira example, not a restriction on other projects. The prompt uses Open-Meteo's [Geocoding API](https://open-meteo.com/en/docs/geocoding-api) with a country-code filter. If the owner wants weather requests without a named city, the agent can also confirm a default city during setup.
 
 ## Files
 
