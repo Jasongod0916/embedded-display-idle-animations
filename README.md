@@ -1,6 +1,6 @@
 # Embedded Display Idle Animations
 
-A collection of original standby animations for small embedded displays. Each animation folder is an AI handoff pack for people who already have their own device firmware and want to add an animation without replacing their existing features. Give the folder and your project to an AI coding assistant to adapt the animation to your display and integrate it into your existing idle flow.
+A collection of original standby animations and device feature guides for small embedded displays. Each animation folder is an AI handoff pack for people who already have their own device firmware and want to add an animation without replacing their existing features. Give the folder and your project to an AI coding assistant to adapt the animation to your display and integrate it into your existing idle flow.
 
 Animations may target different display technologies and sizes, but are not automatically compatible with every screen. Each folder states its tested hardware and assumptions.
 
@@ -13,3 +13,7 @@ Animations may target different display technologies and sizes, but are not auto
 The flicker in the GIF is caused by recording the display; the animation looks normal when viewed directly.
 
 Compiled firmware and one-click installers are optional future additions. The per-animation source folder is the main deliverable.
+
+## Feature folders
+
+- [`weather/`](weather/) — the Kira weather card reference implementation and a ready-to-use prompt for asking an AI coding agent to adapt the feature to an existing firmware project.
