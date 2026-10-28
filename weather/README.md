@@ -15,6 +15,12 @@ This folder is an AI handoff pack for adding a similar live weather card to an e
 
 The AI should adapt the layout, drawing calls, tool registration, event scheduling, and timeout behavior to the target project. The Kira implementation is a reference, not a standalone library.
 
+## Preview
+
+![Kira weather card preview](preview.gif)
+
+The flicker in the GIF comes from recording the display; the screen looks normal when viewed directly.
+
 ## Location support for other projects
 
 The current Kira source is fixed to Minxiong, Taiwan. For another project, the AI agent first confirms the country with its owner and saves it as the lookup scope. After setup, the device user can ask for a city or county by name alone; the saved country keeps place lookup in the right country, so the user does not have to repeat the country every time. Taiwan is the Kira example, not a restriction on other projects. The prompt uses Open-Meteo's [Geocoding API](https://open-meteo.com/en/docs/geocoding-api) with a country-code filter. If the owner wants weather requests without a named city, the agent can also confirm a default city during setup.
@@ -23,6 +29,7 @@ The current Kira source is fixed to Minxiong, Taiwan. For another project, the A
 
 - [`AI_PROMPT.md`](AI_PROMPT.md): ready-to-use instructions for an AI coding agent. No fields need to be filled in.
 - [`weather_source_excerpt.md`](weather_source_excerpt.md): implementation details and code excerpts from the Kira reference.
+- [`preview.gif`](preview.gif): a short recording of the weather card on Kira's OLED.
 - [`kira_weather_icons.h`](kira_weather_icons.h): the original 48 × 48 one-bit weather icon set and the small Kira location/update labels. Adapt or redraw them for other display APIs as needed.
 
 ## Data source and attribution

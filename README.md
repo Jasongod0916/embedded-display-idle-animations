@@ -17,3 +17,7 @@ Compiled firmware and one-click installers are optional future additions. The pe
 ## Feature folders
 
 - [`weather/`](weather/) — the Kira weather card reference implementation and a ready-to-use prompt for asking an AI coding agent to adapt the feature to an existing firmware project.
+
+![Kira weather card preview](weather/preview.gif)
+
+The flicker in the GIF comes from recording the display; the screen looks normal when viewed directly.
